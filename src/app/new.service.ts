@@ -16,5 +16,10 @@ export class NewService {
   saveOrder(order) {
        return this.http.post('http://localhost:8082/order/save' , order);
   }
+ 
+  getAllEmp(): Observable<any> {
+    return this.http.get('http://localhost:8082/emp');
+  }
+  
 
 }

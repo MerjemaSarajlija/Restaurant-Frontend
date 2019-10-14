@@ -1,0 +1,13 @@
+#birth{
+    background-image: url(src/assets/img/birthday.png);
+    width: 100%;
+}
+
+#diner{
+    background-image: url(src/assets/img/dinner.png);
+    width: 100%;
+}
+#ani{
+    background-image: url(src/assets/img/anniversary.png);
+}
+

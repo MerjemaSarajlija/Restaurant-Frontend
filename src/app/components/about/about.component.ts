@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NewService} from 'src/app/new.service'
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  emp:any;
+
+  constructor(private nService: NewService) { }
 
   ngOnInit() {
+    this.getAllEmployees();
   }
+
+  getAllEmployees(){
+    this.nService.getAllEmp().subscribe(
+      accdata => {
+        this.emp = accdata;
+        console.log(accdata);
+           },
+      err => console.log(err)
+    );
+    }
 
 }

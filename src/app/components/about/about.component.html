@@ -1,5 +1,14 @@
 <app-header></app-header>
+<div class="container-fluid" style="margin-top: 30px;">
+        <div class="row" style="width:100%; position: absolute;">
+                <div *ngFor="let e of emp">
+                        <div class="col-xs-7 col-sm-3">
+                                <img *ngIf="e.picture != null" style="height: 350px; width: 350px" src="{{e.picture}}">
+                                <h4 style="text-align: center; width: 300px;;">{{e.name}}</h4>
+                                <h4 style="text-align: center; width: 300px;;">{{e.position}}</h4>
 
 
-
-
+                        </div>
+                </div>
+        </div>
+</div>
