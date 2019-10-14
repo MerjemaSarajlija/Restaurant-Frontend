@@ -8,7 +8,13 @@ import { Observable } from 'rxjs';
 export class NewService {
 
   constructor(private http: HttpClient) { }
-  getAllfod(): Observable<any>{
+ 
+  getAllfod(): Observable<any> {
     return this.http.get('http://localhost:8082/food');
   }
+  
+  saveOrder(order) {
+       return this.http.post('http://localhost:8082/order/save' , order);
+  }
+
 }

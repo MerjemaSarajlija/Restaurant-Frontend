@@ -3,6 +3,8 @@ import {NewService} from 'src/app/new.service';
 import {OrderModel} from 'src/app/Models/order-model';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router, ActivatedRoute} from '@angular/router';
+
 
 
 
@@ -17,7 +19,9 @@ export class OrderModalComponent implements OnInit {
   orderFoodForm:FormGroup;
   food:any;
 
-  constructor(private nService : NewService,
+  constructor(
+           private router: Router,
+            private nService : NewService,
             @Optional() @Inject(MAT_DIALOG_DATA) public data,
             @Optional() public dialogRef: MatDialogRef<OrderModalComponent>) {
               
@@ -34,9 +38,9 @@ export class OrderModalComponent implements OnInit {
   createOrderFoodForm() { 
 
     this.orderFoodForm = new FormGroup({
-    'food':  new FormControl(this.orderModel.food , [Validators.required]),
-    'customerName': new FormControl(this.orderModel.customerName, [Validators.required]),
-    'address': new FormControl(this.orderModel.address , [Validators.required]),
+    'food':  new FormControl(null, [Validators.required]),
+    'customerName': new FormControl(null, [Validators.required]),
+    'address': new FormControl(null , [Validators.required]),
     });
  }
 
@@ -44,10 +48,18 @@ export class OrderModalComponent implements OnInit {
   this.nService.getAllfod().subscribe(
     accdata => {
       this.food = accdata;
-      console.log(this.food);
-     },
+         },
     err => console.log(err)
   );
   }
 
+  
+ saveOrder(){
+  this.orderModel.food = this.orderFoodForm.value.food;
+  this.orderModel.customerName = this.orderFoodForm.value.customerName;
+  this.orderModel.address = this.orderFoodForm.value.address;
+  this.nService.saveOrder(this.orderModel).subscribe(res =>
+    this.data=res );
+    this.router.navigate([''], {skipLocationChange: true});
+  }
 }

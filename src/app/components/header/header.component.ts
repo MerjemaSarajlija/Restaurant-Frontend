@@ -39,14 +39,12 @@ import {NewService} from 'src/app/new.service'
   }
 
   addOrder() {
-    console.log("pozvala se fja za add");
      this.dialog.open(OrderModalComponent, {data: {}}).
      afterClosed().subscribe(data => this.loadOrder());
  }
 
  loadOrder(){
-   console.log("loadano");
-
+   alert('Your order is recived.')
  }
 
 
