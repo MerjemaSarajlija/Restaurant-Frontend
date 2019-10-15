@@ -21,5 +21,12 @@ export class NewService {
     return this.http.get('http://localhost:8082/emp');
   }
   
+  getAllEvents(): Observable<any> {
+    return this.http.get('http://localhost:8082/events');
+  }
+
+  saveBooking(booking) {
+    return this.http.post('http://localhost:8082/host/save' , booking);
+}
 
 }

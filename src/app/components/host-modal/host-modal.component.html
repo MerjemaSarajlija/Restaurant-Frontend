@@ -1,0 +1,37 @@
+<div style="width: 100%">
+        <h2 mat-dialog-title>Host Your Event</h2>
+        <form [formGroup]="hostForm" class="form-width">
+            <mat-dialog-content>
+    
+    
+                <div class="form-group">
+                    <div class="col-sm-12" style="width: 100%;">
+                        <label for = "event">Event</label>
+                        <ng-select formControlName="event" placeholder="Pleace select an event">
+                            <ng-option *ngFor="let vat of events" [value]="vat.eventName">{{vat.eventName}} </ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="customerName">Your Name</label>
+                        <input class="form-control" formControlName="name" id="name" name="name"
+                            type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="address">Date</label>
+                        <input class="form-control" formControlName="date" id="date" name="date" type="date">
+                    </div>
+                </div>
+            </mat-dialog-content>
+    
+            <div mat-dialog-actions>
+                <span class="fill-remaining-space"></span>
+                <button mat-raised-button mat-dialog-close [disabled]="hostForm.invalid" color="primary"(click)="saveOrder()">Save</button>
+                <button mat-raised-button mat-dialog-close>Cancel</button>
+            </div>
+    
+        </form>
+    </div>

@@ -13,6 +13,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from  '@angular/material';
 import { OrderModalComponent } from './components/order-modal/order-modal.component';
+import { HostModalComponent } from './components/host-modal/host-modal.component';
+
 
 
 
@@ -25,6 +27,7 @@ import { OrderModalComponent } from './components/order-modal/order-modal.compon
     HeaderComponent,
     BookingComponent,
     OrderModalComponent,
+    HostModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +38,9 @@ import { OrderModalComponent } from './components/order-modal/order-modal.compon
     NgSelectModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    NgSelectModule,
   ],
-  entryComponents:[OrderModalComponent],
+  entryComponents:[OrderModalComponent, HostModalComponent],
 
   providers: [NewService],
   bootstrap: [AppComponent]
