@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand">
-      <img src="assets/img/logo.png" style="width: 30 px; height: 50px;"  routerLink="">
+      <img src="assets/img/food.png" style="width: 30 px; height: 50px;"  routerLink="">
     </a>
   
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
@@ -12,15 +12,15 @@
     [ngClass]="{ 'show': navbarOpen }">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <h4 class="nav-link"   routerLink="/about">Staff</h4>
+          <h4 class="nav-link" style="color: #fff; "  routerLink="/about">Staff</h4>
         </li>
   
         <li class="nav-item">
-          <h4 class="nav-link" routerLink="/booking">Booking</h4>
+          <h4 class="nav-link" style="color: #fff; "  routerLink="/booking">Booking</h4>
         </li>
        
         <li class="nav-item">
-          <h4 class="nav-link" (click)="addOrder()">Order</h4>
+          <h4 class="nav-link" style="color: #fff; "  (click)="addOrder()">Order</h4>
         </li>
       </ul>
     </div>

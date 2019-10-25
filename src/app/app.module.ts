@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from  '@angular/material';
 import { OrderModalComponent } from './components/order-modal/order-modal.component';
 import { HostModalComponent } from './components/host-modal/host-modal.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -28,6 +29,7 @@ import { HostModalComponent } from './components/host-modal/host-modal.component
     BookingComponent,
     OrderModalComponent,
     HostModalComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
