@@ -1,13 +1,12 @@
-#birth{
-    background-image: url(src/assets/img/birthday.png);
-    width: 100%;
-}
 
-#diner{
-    background-image: url(src/assets/img/dinner.png);
-    width: 100%;
-}
-#ani{
-    background-image: url(src/assets/img/anniversary.png);
-}
+.responsive {
+    width:14%;
+ height: auto;
+ max-width: 50%;
+ max-height: 30%;
+ display: block;
+  margin-left: 2%;
+  margin-right: auto;
+  float: left;
+ }
 

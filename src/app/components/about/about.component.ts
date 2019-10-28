@@ -20,6 +20,7 @@ export class AboutComponent implements OnInit {
     this.nService.getAllEmp().subscribe(
       accdata => {
         this.emp = accdata;
+        console.log(accdata);
            },
       err => console.log(err)
     );
